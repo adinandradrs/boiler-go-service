@@ -1,6 +1,8 @@
 package util
 
 import (
+	"crypto/rand"
+	"math/big"
 	"net/http"
 
 	commodel "github.com/adinandradrs/codefun-go-common/model"
@@ -21,4 +23,19 @@ func ThrowAnyError(inp interface{}, context *gin.Context) {
 	out := commodel.StatusCodeResponse{}
 	mapstructure.Decode(inp, &out)
 	context.JSON(out.Code, out.Response)
+}
+
+func GenerateOtp(digit int) (string, error) {
+	nums := "012345679"
+	bytes := make([]byte, digit)
+	for i := 0; i < digit; i++ {
+		num, err := rand.Int(rand.Reader,
+			big.NewInt(int64(len(nums))),
+		)
+		if err != nil {
+			return "", err
+		}
+		bytes[i] = nums[num.Int64()]
+	}
+	return string(bytes), nil
 }
