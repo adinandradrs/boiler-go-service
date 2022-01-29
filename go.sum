@@ -1,7 +1,7 @@
 github.com/BurntSushi/toml v0.3.1/go.mod h1:xHWCNGjB5oqiDr8zfno3MHue2Ht5sIBksp03qcyfWMU=
 github.com/Masterminds/semver/v3 v3.1.1/go.mod h1:VPu/7SZ7ePZ3QOrcuXROw5FAcLl4a0cBrbBpGY/8hQs=
-github.com/adinandradrs/codefun-go-common v0.0.0-20220129172526-abb3df944bb0 h1:1ZeEexaOzQ/N/GSLDvWzLi9BEHEXgOxns4rdi8Mp01s=
-github.com/adinandradrs/codefun-go-common v0.0.0-20220129172526-abb3df944bb0/go.mod h1:lpJpnR+hrzhoq867AFeJBdtK2iYILZFAPifzSQ5tSrg=
+github.com/adinandradrs/codefun-go-common v0.0.0-20220129185527-bd4e4f9dba00 h1:0WDKGpi8RqAPnUUXUtbPK/fMf0AvA7HuGWYb6Wm68IE=
+github.com/adinandradrs/codefun-go-common v0.0.0-20220129185527-bd4e4f9dba00/go.mod h1:lpJpnR+hrzhoq867AFeJBdtK2iYILZFAPifzSQ5tSrg=
 github.com/chzyer/logex v1.1.10/go.mod h1:+Ywpsq7O8HXn0nuIou7OrIPyXbp3wmkHB+jjWRnGsAI=
 github.com/chzyer/readline v0.0.0-20180603132655-2972be24d48e/go.mod h1:nSuG5e5PlCu98SY8svDHJxuZscDgtXS6KTTbou5AhLI=
 github.com/chzyer/test v0.0.0-20180213035817-a1ea475d72b1/go.mod h1:Q3SI9o4m/ZMnBNeIyt5eFwwo7qiLfzFZmjNmxjkiQlU=

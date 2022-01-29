@@ -5,13 +5,13 @@ import (
 	"math/big"
 	"net/http"
 
-	commodel "github.com/adinandradrs/codefun-go-common/model"
+	combase "github.com/adinandradrs/codefun-go-common"
 	"github.com/gin-gonic/gin"
 	"github.com/mitchellh/mapstructure"
 )
 
 func ThrowBadError(err string, context *gin.Context) {
-	out := commodel.GetStatusCodeResponse(http.StatusBadRequest, commodel.RestResponse{
+	out := combase.GetStatusCodeResponse(http.StatusBadRequest, combase.RestResponse{
 		Data:    nil,
 		Result:  false,
 		Message: err,
@@ -20,7 +20,7 @@ func ThrowBadError(err string, context *gin.Context) {
 }
 
 func ThrowAnyError(inp interface{}, context *gin.Context) {
-	out := commodel.StatusCodeResponse{}
+	out := combase.StatusCodeResponse{}
 	mapstructure.Decode(inp, &out)
 	context.JSON(out.Code, out.Response)
 }

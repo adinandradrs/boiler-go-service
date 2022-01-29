@@ -3,7 +3,7 @@ module github.com/adinandradrs/codefun-go-service
 go 1.17
 
 require (
-	github.com/adinandradrs/codefun-go-common v0.0.0-20220129172526-abb3df944bb0
+	github.com/adinandradrs/codefun-go-common v0.0.0-20220129185527-bd4e4f9dba00
 	github.com/gin-gonic/gin v1.7.7
 	github.com/go-redis/redis v6.15.9+incompatible
 	github.com/jackc/pgx/v4 v4.14.1

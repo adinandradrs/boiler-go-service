@@ -6,7 +6,14 @@ import (
 	"fmt"
 	"net/http"
 
+	"crypto/tls"
+	"os"
+	"time"
+
 	"github.com/jackc/pgx/v4/pgxpool"
+
+	"github.com/adinandradrs/codefun-go-service/util"
+	"github.com/go-redis/redis"
 )
 
 type RestAdaptorCapsule struct {
@@ -60,4 +67,25 @@ type BaseRepository interface {
 	Save(input interface{}) (interface{}, error)
 	FindById(id uint) (interface{}, error)
 	Delete(id uint) error
+}
+
+func ConfigRestClient(timeout int) *http.Client {
+	if os.Getenv("REST_SKIP_SSL") == util.VALUE_YES {
+		http.DefaultTransport.(*http.Transport).TLSClientConfig = &tls.Config{InsecureSkipVerify: true}
+	}
+	httpClient := http.Client{
+		Timeout: time.Duration(timeout) * time.Second,
+	}
+	return &httpClient
+}
+
+func ConfigCache(host string, passwd string) *redis.Client {
+	rdb := redis.NewClient(&redis.Options{
+		Addr:         host,
+		Password:     passwd,
+		DB:           0,
+		PoolSize:     50,
+		MinIdleConns: 10,
+	})
+	return rdb
 }
