@@ -12,7 +12,7 @@ import (
 
 	"github.com/jackc/pgx/v4/pgxpool"
 
-	"github.com/adinandradrs/codefun-go-service/util"
+	"github.com/adinandradrs/boiler-go-service/util"
 	"github.com/go-redis/redis"
 )
 
