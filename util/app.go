@@ -5,7 +5,7 @@ import (
 	"math/big"
 	"net/http"
 
-	combase "github.com/adinandradrs/codefun-go-common"
+	combase "github.com/adinandradrs/boiler-go-common"
 	"github.com/gin-gonic/gin"
 	"github.com/mitchellh/mapstructure"
 )
